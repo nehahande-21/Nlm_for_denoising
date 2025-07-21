@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Denoising Program",
+      "type": "shell",
+      "command": "cl",
+      "args": [
+        "/EHsc",
+        "/std:c++17",
+        "/I",
+        "C:/opencv/opencv/build/include",
+        "/I",
+        "C:/opencv/opencv/build/include/opencv2",
+        "non_local_denoise.cpp",
+        "/link",
+        "/LIBPATH:C:/opencv/opencv/build/x64/vc15/lib",
+        "opencv_world480.lib",
+        "/OUT:denoise.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$msCompile"]
+    }
+  ]
+}
